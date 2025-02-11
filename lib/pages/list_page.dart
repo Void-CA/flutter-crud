@@ -1,3 +1,4 @@
+import 'package:crud/db/operation.dart';
 import 'package:crud/pages/save_page.dart';
 import 'package:flutter/material.dart';
 
@@ -6,6 +7,8 @@ class ListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Operation.getNotes();
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),

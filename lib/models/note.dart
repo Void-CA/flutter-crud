@@ -3,7 +3,7 @@ class Note {
   final String title;
   final String content;
 
-  Note(this.id, this.title, this.content);
+  Note({required this.id, required this.title, required this.content});
 
   Map<String, dynamic> toMap() {
     return {

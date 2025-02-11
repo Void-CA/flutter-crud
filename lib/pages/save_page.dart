@@ -1,3 +1,5 @@
+import 'package:crud/db/operation.dart';
+import 'package:crud/models/note.dart';
 import 'package:flutter/material.dart';
 
 class SavePage extends StatelessWidget {
@@ -64,8 +66,10 @@ class _FormSave extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context)
-                      .showSnackBar(SnackBar(content: Text('Guardando...')));
+                  Operation.insert(Note(
+                      id: 0,
+                      title: titleController.text,
+                      content: contentController.text));
                 }
               },
               child: Text('Guardar'),
