@@ -10,9 +10,7 @@ class SavePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Guardar"),
       ),
-      body: Container(
-        child: _FormSave(),
-      ),
+      body: _FormSave(),
     );
   }
 }
@@ -67,9 +65,10 @@ class _FormSave extends StatelessWidget {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   Operation.insert(Note(
-                      id: 0,
-                      title: titleController.text,
-                      content: contentController.text));
+                    title: titleController.text,
+                    content: contentController.text,
+                  ));
+                  print('Guardado' + titleController.text);
                 }
               },
               child: Text('Guardar'),
